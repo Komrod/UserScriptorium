@@ -1,0 +1,4 @@
+scriptorium_user_script:
+    resource: "@scriptoriumUserScriptBundle/Resources/config/routing.yml"
+    prefix:   /
+

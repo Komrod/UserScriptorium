@@ -1,0 +1,7 @@
+scriptorium_user_script_hello:
+    path:     /hello/{name}
+    defaults: { _controller: scriptoriumUserScriptBundle:Default:index }
+
+scriptorium_user_script_homepage:
+    path:     /
+    defaults: { _controller: scriptoriumUserScriptBundle:Default:index }
