@@ -27,3 +27,13 @@ security:
     access_control:
         #- { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }
         #- { path: ^/_internal/secure, roles: IS_AUTHENTICATED_ANONYMOUSLY, ip: 127.0.0.1 }
+
+    firewalls:
+        main:
+            pattern:        ^/
+            switch_user:    true
+            anonymous:      ~
+            form_login:
+                login_path: /login
+            logout:
+                path:       /logout

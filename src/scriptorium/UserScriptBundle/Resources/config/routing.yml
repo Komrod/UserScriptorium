@@ -5,3 +5,13 @@ scriptorium_user_script_hello:
 scriptorium_user_script_homepage:
     path:     /
     defaults: { _controller: scriptoriumUserScriptBundle:Default:index }
+
+scriptorium_user_script_script_add:
+    path:     /addscript
+    defaults: { _controller: scriptoriumUserScriptBundle:Script:add }
+
+scriptorium_user_script_register_form:
+    path:     /register
+    defaults: { _controller: scriptoriumUserScriptBundle:User:registerForm }
+
+    
