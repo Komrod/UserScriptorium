@@ -3,10 +3,9 @@
 * COLOR **********************************************************************
 *****************************************************************************/
 
-@raspberry: #561635;
 @blue: #598ADE;
 @pink: #D12A74;
-
+@raspberry: #561635;
 
 @background: #fff;
 @menuUser: @pink;
@@ -173,8 +172,7 @@ ul.navbar-nav {
     li {
         a {
             transition: all 0.5s ease;
-            background-color: @menuLinkBackground;
-            .gradient;
+            background-color: transparent;
             height: 50px;
             color: @menuLink;
             font-family: arial;
@@ -185,7 +183,7 @@ ul.navbar-nav {
             color: @menuLinkHover;
             height: 60px;
             border-bottom: 4px solid @pink;
-            box-shadow: 0px 0px 40px 5px rgba(0, 0, 0, 0.8) inset;
+            box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.3) inset;
         }
     }
 }
@@ -205,18 +203,18 @@ ul.navbar-nav {
 * CONTENT ********************************************************************
 *****************************************************************************/
 
-.shadowInset {
-    -webkit-box-shadow:inset 0px 0px 15px 0px @boxInsetShadow;
-    -moz-box-shadow:inset 0px 0px 15px 0px @boxInsetShadow;
-    -o-box-shadow:inset 0px 0px 15px 0px @boxInsetShadow;
-    box-shadow:inset 0px 0px 15px 0px @boxInsetShadow;
-}
-
 .shadow {
     -webkit-box-shadow:5px 5px 10px 0px @boxShadow;
     -moz-box-shadow:5px 5px 10px 0px @boxShadow;
     -o-box-shadow:5px 5px 10px 0px @boxShadow;
     box-shadow:5px 5px 10px 0px @boxShadow;
+}
+
+.shadowInset {
+    -webkit-box-shadow:inset 0px 0px 15px 0px @boxInsetShadow;
+    -moz-box-shadow:inset 0px 0px 15px 0px @boxInsetShadow;
+    -o-box-shadow:inset 0px 0px 15px 0px @boxInsetShadow;
+    box-shadow:inset 0px 0px 15px 0px @boxInsetShadow;
 }
 
 .gradient {
@@ -243,19 +241,44 @@ ul.navbar-nav {
             padding:0;
         }
     }
+    
+    h1, h2, h3, h4 {
+        font-size: 150%;
+        font-weight: bolder;
+        margin-top: 5px;
+        margin-bottom: 10px;
+        color: @boxTitle;
+        text-transform: capitalize;
+    }
+    h2 {
+        font-size: 140%;
+        color: @boxTitle + #111;
+    }
+    h3 {
+        font-size: 130%;
+        color: @boxTitle + #222;
+    }
+    h4 {
+        font-size: 120%;
+        color: @boxTitle + #333;
+    }
     .us-box {
         .shadowInset;
         .roundedCorner;
         background-color: @boxBackground;
         border:1px solid @boxBorder;
-        display:inline-block;
+        display:block;
         color: @boxText;
         font-family:arial;
         padding: 10px;
-        height: 300px;
         margin-left: 10px;
         margin-right: 10px;
         margin-bottom: 20px;
+        
+        &.home {
+            height: 300px;
+        }
+        
         h1, h2 {
             font-size: 125%;
             font-weight: bolder;
@@ -266,8 +289,6 @@ ul.navbar-nav {
         }
     }
 }
-
-
 
 .modal {
     z-index: 2000;

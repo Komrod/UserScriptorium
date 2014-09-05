@@ -65,3 +65,13 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+# fos/user
+fos_user:
+    db_driver: orm
+    firewall_name: main
+    user_class: scriptorium\UserScriptBundle\Entity\User
+    registration:
+        form:
+            type: scriptorium_user_script_registration
+            handler: scriptorium_user_script.form.handler.registration

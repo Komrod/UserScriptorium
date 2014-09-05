@@ -2,6 +2,8 @@ parameters:
 #    scriptorium_user_script.example.class: scriptorium\UserScriptBundle\Example
 
 services:
-#    scriptorium_user_script.example:
-#        class: %scriptorium_user_script.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
+    scriptorium_user_script.registration.form.type:
+        class: scriptorium\UserScriptBundle\Form\Type\RegistrationFormType
+        arguments: [%fos_user.model.user.class%]
+        tags:
+            - { name: form.type, alias: scriptorium_user_script_registration }
