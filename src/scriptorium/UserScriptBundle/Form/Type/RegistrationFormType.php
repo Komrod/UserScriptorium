@@ -10,13 +10,10 @@ class RegistrationFormType extends BaseType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         parent::buildForm($builder, $options);
-
-        // add your custom field
-        $builder->add('name');
     }
 
     public function getName()
     {
-        return 'scriptorium_user_script_registration';
+        return 'scriptorium_userscriptbundle_registration';
     }
 }

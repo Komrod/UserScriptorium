@@ -1,5 +1,4 @@
 <?php
-// src/Acme/UserBundle/Entity/User.php
 
 namespace scriptorium\UserScriptBundle\Entity;
 
@@ -30,6 +29,41 @@ class User extends BaseUser
     public function __construct()
     {
         parent::__construct();
-        // your own logic
+        
+        // default registration date
+        $this->registrationDate = new \DateTime();
     }
+
+    /**
+     * Get id
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+    
+    public function hasName()
+    {
+        return false;
+    }
+
+    /**
+     * Get registrationDate
+     * @return string
+     */
+    public function getRegistrationDate()
+    {
+        return $this->registrationDate;
+    }
+    
+    /**
+     * Set registrationDate
+     * @param $date DateTime The registration date
+     */
+    public function setRegistrationDate($date)
+    {
+        $this->registrationDate = $date;
+    }
+    
 }

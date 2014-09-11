@@ -1,0 +1,47 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% form_theme form _self %}
+
+{% block form_row %}
+<div class="form-group">
+    {{ form_label(form, '', {'label_attr': {'class': 'col-sm-4 control-label'} }) }}
+    {{ form_errors(form) }}
+    <div class="col-sm-8">
+        {{ form_widget(form, {'attr': {'class': 'form-control'} }) }}
+    </div>
+</div>
+{% endblock %}
+
+{% block form %}
+
+{% endblock %}
+
+{% block fos_user_content %}
+
+<h1>{{ 'registration.form.title'|trans }}</h1>
+<div class="row">
+    <div class="col-md-6 col-sm-12">
+        <div class="us-box">
+            {{ 'registration.form.prepend'|trans }}
+            <form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="form-horizontal" id="registrationForm" role="form" style="margin-top: 30px;">
+                {{ form_widget(form) }}
+                <div class="form-group text-center">
+                    <input type="submit" class="btn btn-primary" value="{{ 'registration.btn.submit'|trans }}"/>
+                </div>
+            </form>
+            {{ 'registration.form.postpend'|trans }}
+        </div>
+    </div>
+    <div class="col-md-6 col-sm-12">
+        <div class="us-box">
+            {{ 'registration.form.already_account'|trans }}
+            
+            <br/><br/>
+            <button type="button" class="btn btn-primary" style="margin-bottom: 10px;">{{ 'registration.link.log_in'|trans }}</button>
+            <button type="button" class="btn btn-primary" style="margin-bottom: 10px;">{{ 'registration.link.forgot_password'|trans }}</button>
+            <button type="button" class="btn btn-primary" style="margin-bottom: 10px;">{{ 'registration.link.resend_confirmation'|trans }}</button>
+        </div>
+    </div>
+</div>
+
+{% endblock fos_user_content %}

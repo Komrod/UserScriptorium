@@ -20,6 +20,7 @@ framework:
     session:         ~
     fragments:       ~
     http_method_override: true
+    translator: { fallback: en }    
 
 # Twig Configuration
 twig:
@@ -30,7 +31,7 @@ twig:
 assetic:
     debug:          "%kernel.debug%"
     use_controller: false
-    bundles:        [ scriptoriumUserScriptBundle ]
+    bundles:        [ scriptoriumUserScriptBundle, FOSUserBundle ]
     #java: /usr/bin/java
     filters:
         cssrewrite: ~
@@ -73,5 +74,5 @@ fos_user:
     user_class: scriptorium\UserScriptBundle\Entity\User
     registration:
         form:
-            type: scriptorium_user_script_registration
-            handler: scriptorium_user_script.form.handler.registration
+            type: scriptorium_userscriptbundle_registration
+            handler: scriptorium_userscriptbundle.form.handler.registration
