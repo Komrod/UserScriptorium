@@ -1,0 +1,48 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% block fos_user_content %}
+
+<h1>{{ 'login.form.title'|trans }}</h1>
+
+{% if error %}
+    <div>{{ error|trans({}, 'FOSUserBundle') }}</div>
+{% endif %}
+
+<div class="row">
+    <div class="col-md-6 col-sm-12">
+        <div class="us-box">
+            {{ 'login.form.prepend'|trans }}
+            <form action="{{ path("fos_user_security_check") }}" method="post" class="form-horizontal" role="form" style="margin-top: 30px;">
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+            
+                <div class="form-group">
+                    <label for="username" class="col-sm-4 control-label">{{ 'security.login.username'|trans({}, 'FOSUserBundle') }}</label>
+                    <div class="col-sm-8">
+                        <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="col-sm-4 control-label">{{ 'security.login.password'|trans({}, 'FOSUserBundle') }}</label>
+                    <div class="col-sm-8">
+                        <input type="password" id="password" name="_password" required="required" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+                        <label for="remember_me" class="pointer">{{ 'security.login.remember_me'|trans({}, 'FOSUserBundle') }}</label>
+                    </div>
+                </div>
+                <div class="form-group text-center">
+                    <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}" class="btn btn-primary" />
+                </div>
+            </form>
+            {{ 'login.form.postpend'|trans }}
+        </div>
+    </div>
+    <div class="col-md-6 col-sm-12">
+        {% include "scriptoriumUserBundle:block:also.html.twig" %}
+    </div>
+</div>
+
+{% endblock fos_user_content %}

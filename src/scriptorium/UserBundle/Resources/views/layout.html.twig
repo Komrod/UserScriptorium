@@ -1,0 +1,57 @@
+{# src/scriptorium/UserBundle/Resources/views/layout.html.twig #}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html"; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% block title %}UserScriptorium{% endblock %}</title>
+        <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+        {% stylesheets '@scriptoriumUserBundle/Resources/public/css/bootstrap.min.css'
+                       '@scriptoriumUserBundle/Resources/public/css/*.less' %}
+            <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+        {% endstylesheets %}
+        <link href='http://fonts.googleapis.com/css?family=Roboto:900' rel='stylesheet' type='text/css'>
+        <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        <header class="navbar navbar-static-top bs-docs-nav" id="top" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="/" class="navbar-brand"><span class="user">User</span><span class="scriptorium">Scriptorium</span></a>
+                </div>
+                <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+                    <ul class="nav navbar-nav">
+                        <li class="script"><a href="/script">Scripts</a></li>
+                        <li><a href="/about">About</a></li>
+                        {% if not app.user %}
+                        <li><a href="/login">Login</a></li>
+                        <li><a href="/register">Register</a></li>
+                        {% else %}
+                        <li><a href="/account">Account</a></li>
+                        <li><a href="/disconnect">Disconnect</a></li>
+                        {% endif %}
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/add">Add script</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <div class="container">
+            {% block body %}{% endblock %}
+        </div>
+        {% block modal %}{% endblock %}
+        {% block javascript %}
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        {% javascripts '@scriptoriumUserBundle/Resources/public/js/*' %}
+                <script type="text/javascript" src="{{ asset_url }}"></script>
+            {% endjavascripts %}
+        {% endblock javascript %}
+    </body>
+</html>

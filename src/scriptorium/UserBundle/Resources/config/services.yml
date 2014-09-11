@@ -1,0 +1,14 @@
+parameters:
+#    scriptorium_user_script.example.class: scriptorium\UserBundle\Example
+
+services:
+    scriptorium_UserBundle.registration.form.type:
+        class: scriptorium\UserBundle\Form\Type\RegistrationFormType
+        arguments: [%fos_user.model.user.class%]
+        tags:
+            - { name: form.type, alias: scriptorium_userbundle_registration }
+    scriptorium_userbundle.form.handler.registration:
+        class: scriptorium\UserBundle\Form\Handler\RegistrationFormHandler
+        arguments: ["@fos_user.registration.form", "@request", "@fos_user.user_manager", "@fos_user.mailer", "@fos_user.util.token_generator"]
+        scope: request
+        public: false
