@@ -1,6 +1,6 @@
 <?php
 
-namespace scriptorium\UserScriptBundle\Controller;
+namespace scriptorium\UserBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
@@ -8,6 +8,6 @@ class ScriptController extends Controller
 {
     public function formAction()
     {
-        return $this->render('scriptoriumUserScriptBundle:script:form.html.twig');
+        return $this->render('scriptoriumUserBundle:script:form.html.twig');
     }
 }

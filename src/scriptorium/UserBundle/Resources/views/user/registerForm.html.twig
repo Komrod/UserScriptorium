@@ -1,9 +1,9 @@
-{# src/scriptorium/UserScriptBundle/Resources/views/layout.html.twig #}
-{% extends 'scriptoriumUserScriptBundle::layout.html.twig' %}
+{# src/scriptorium/UserBundle/Resources/views/layout.html.twig #}
+{% extends 'scriptoriumUserBundle::layout.html.twig' %}
 
 {% block javascript %}
     {{ parent() }}
-    {% javascripts '@scriptoriumUserScriptBundle/Resources/public/js/form.validation.js' %}
+    {% javascripts '@scriptoriumUserBundle/Resources/public/js/form.validation.js' %}
             <script type="text/javascript" src="{{ asset_url }}"></script>
     {% endjavascripts %}
     

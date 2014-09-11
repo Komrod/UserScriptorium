@@ -1,6 +1,6 @@
 <?php
 
-namespace scriptorium\UserScriptBundle\Controller;
+namespace scriptorium\UserBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
@@ -14,6 +14,6 @@ class UserController extends Controller
             die('redirect to : '.$url); // @TODO delete
             return $this->redirect($url);
         }        
-        return $this->render('scriptoriumUserScriptBundle:user:registerForm.html.twig');
+        return $this->render('scriptoriumUserBundle:user:registerForm.html.twig');
     }
 }

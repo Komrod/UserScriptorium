@@ -1,6 +1,6 @@
 <?php
 
-namespace scriptorium\UserScriptBundle\Tests\Controller;
+namespace scriptorium\UserBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 

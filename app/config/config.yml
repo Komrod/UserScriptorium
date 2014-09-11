@@ -31,7 +31,7 @@ twig:
 assetic:
     debug:          "%kernel.debug%"
     use_controller: false
-    bundles:        [ scriptoriumUserScriptBundle, FOSUserBundle ]
+    bundles:        [ scriptoriumUserBundle, FOSUserBundle ]
     #java: /usr/bin/java
     filters:
         cssrewrite: ~
@@ -71,8 +71,8 @@ swiftmailer:
 fos_user:
     db_driver: orm
     firewall_name: main
-    user_class: scriptorium\UserScriptBundle\Entity\User
+    user_class: scriptorium\UserBundle\Entity\User
     registration:
         form:
-            type: scriptorium_userscriptbundle_registration
-            handler: scriptorium_userscriptbundle.form.handler.registration
+            type: scriptorium_userbundle_registration
+            handler: scriptorium_userbundle.form.handler.registration

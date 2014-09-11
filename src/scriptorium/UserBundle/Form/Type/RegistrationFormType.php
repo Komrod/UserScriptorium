@@ -1,6 +1,6 @@
 <?php
 
-namespace scriptorium\UserScriptBundle\Form\Type;
+namespace scriptorium\UserBundle\Form\Type;
 
 use Symfony\Component\Form\FormBuilderInterface;
 use FOS\UserBundle\Form\Type\RegistrationFormType as BaseType;
@@ -14,6 +14,6 @@ class RegistrationFormType extends BaseType
 
     public function getName()
     {
-        return 'scriptorium_userscriptbundle_registration';
+        return 'scriptorium_userbundle_registration';
     }
 }

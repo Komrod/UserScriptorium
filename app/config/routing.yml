@@ -1,5 +1,5 @@
 scriptorium_user_script:
-    resource: "@scriptoriumUserScriptBundle/Resources/config/routing.yml"
+    resource: "@scriptoriumUserBundle/Resources/config/routing.yml"
     prefix:   /
 
 fos_user_security:

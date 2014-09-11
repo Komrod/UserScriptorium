@@ -1,6 +1,6 @@
 <?php
 
-namespace scriptorium\UserScriptBundle\Form\Handler;
+namespace scriptorium\UserBundle\Form\Handler;
 
 use FOS\UserBundle\Form\Handler\RegistrationFormHandler as BaseHandler;
 use FOS\UserBundle\Model\UserInterface;

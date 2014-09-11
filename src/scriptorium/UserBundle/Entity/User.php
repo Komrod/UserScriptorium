@@ -1,6 +1,6 @@
 <?php
 
-namespace scriptorium\UserScriptBundle\Entity;
+namespace scriptorium\UserBundle\Entity;
 
 use FOS\UserBundle\Entity\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
