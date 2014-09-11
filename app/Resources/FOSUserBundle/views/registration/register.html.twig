@@ -4,8 +4,8 @@
 
 {% block form_row %}
 <div class="form-group">
+    {{ form_errors(form, {'attr': {'class': 'col-sm-12'} }) }}
     {{ form_label(form, '', {'label_attr': {'class': 'col-sm-4 control-label'} }) }}
-    {{ form_errors(form) }}
     <div class="col-sm-8">
         {{ form_widget(form, {'attr': {'class': 'form-control'} }) }}
     </div>
@@ -33,14 +33,7 @@
         </div>
     </div>
     <div class="col-md-6 col-sm-12">
-        <div class="us-box">
-            {{ 'registration.form.already_account'|trans }}
-            
-            <br/><br/>
-            <button type="button" class="btn btn-primary" style="margin-bottom: 10px;">{{ 'registration.link.log_in'|trans }}</button>
-            <button type="button" class="btn btn-primary" style="margin-bottom: 10px;">{{ 'registration.link.forgot_password'|trans }}</button>
-            <button type="button" class="btn btn-primary" style="margin-bottom: 10px;">{{ 'registration.link.resend_confirmation'|trans }}</button>
-        </div>
+        {% include "scriptoriumUserBundle:block:also.html.twig" %}
     </div>
 </div>
 

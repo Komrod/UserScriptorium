@@ -4,10 +4,17 @@ registration:
         title: "Join The Community"
         prepend: "Create a new account and join the community of script users and developpers!"
         postpend: ""
-        already_account: "If you already have an account:"
-    link:
+    btn:
+        submit: "Register"
+login:
+    form:
+        title: "Sign in to your account"
+also:
+    title: "And also ..."
+    already_account: "If you already have an account:"
+    no_account: "If you don't have an account:"
+    links:
         log_in: "Log in"
         forgot_password: "I Forgot my password"
         resend_confirmation: "Send confirmation again"
-    btn:
-        submit: "Register"
+        register: "Register a new account"

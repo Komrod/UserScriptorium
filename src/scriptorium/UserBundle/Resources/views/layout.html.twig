@@ -29,8 +29,13 @@
                     <ul class="nav navbar-nav">
                         <li class="script"><a href="/script">Scripts</a></li>
                         <li><a href="/about">About</a></li>
+                        {% if not app.user %}
                         <li><a href="/login">Login</a></li>
                         <li><a href="/register">Register</a></li>
+                        {% else %}
+                        <li><a href="/account">Account</a></li>
+                        <li><a href="/disconnect">Disconnect</a></li>
+                        {% endif %}
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="/add">Add script</a></li>
@@ -44,7 +49,7 @@
         {% block modal %}{% endblock %}
         {% block javascript %}
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-            {% javascripts '@scriptoriumUserBundle/Resources/public/js/*' %}
+        {% javascripts '@scriptoriumUserBundle/Resources/public/js/*' %}
                 <script type="text/javascript" src="{{ asset_url }}"></script>
             {% endjavascripts %}
         {% endblock javascript %}

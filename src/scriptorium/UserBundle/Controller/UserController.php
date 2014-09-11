@@ -11,7 +11,6 @@ class UserController extends Controller
         $securityContext = $this->container->get('security.context');
         if ($securityContext->isGranted('IS_AUTHENTICATED_REMEMBERED') || $securityContext->isGranted('IS_AUTHENTICATED_FULLY')) {
             $url = $this->generateUrl("/");
-            die('redirect to : '.$url); // @TODO delete
             return $this->redirect($url);
         }        
         return $this->render('scriptoriumUserBundle:user:registerForm.html.twig');
