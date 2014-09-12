@@ -1,5 +1,9 @@
-scriptorium_user_script:
+scriptorium_userbundle:
     resource: "@scriptoriumUserBundle/Resources/config/routing.yml"
+    prefix:   /
+
+scriptorium_pagebundle:
+    resource: "@scriptoriumPageBundle/Resources/config/routing.yml"
     prefix:   /
 
 fos_user_security:
@@ -7,7 +11,7 @@ fos_user_security:
 
 fos_user_profile:
     resource: "@FOSUserBundle/Resources/config/routing/profile.xml"
-    prefix: /profile
+    prefix: /user
 
 fos_user_register:
     resource: "@FOSUserBundle/Resources/config/routing/registration.xml"
@@ -19,4 +23,4 @@ fos_user_resetting:
 
 fos_user_change_password:
     resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
-    prefix: /profile
+    prefix: /user

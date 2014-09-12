@@ -1,0 +1,5 @@
+scriptorium_page_home:
+    path:     /
+    defaults: { _controller: scriptoriumPageBundle:Default:index }
+
+    

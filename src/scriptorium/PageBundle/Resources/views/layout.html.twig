@@ -1,4 +1,3 @@
-{# src/scriptorium/UserBundle/Resources/views/layout.html.twig #}
 <!DOCTYPE html>
 <html>
     <head>
@@ -6,8 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{% block title %}UserScriptorium{% endblock %}</title>
         <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-        {% stylesheets '@scriptoriumUserBundle/Resources/public/css/bootstrap.min.css'
-                       '@scriptoriumUserBundle/Resources/public/css/*.less' %}
+        {% stylesheets '@scriptoriumPageBundle/Resources/public/css/bootstrap.min.css'
+                       '@scriptoriumPageBundle/Resources/public/css/*.less' %}
             <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
         {% endstylesheets %}
         <link href='http://fonts.googleapis.com/css?family=Roboto:900' rel='stylesheet' type='text/css'>
@@ -49,7 +48,7 @@
         {% block modal %}{% endblock %}
         {% block javascript %}
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        {% javascripts '@scriptoriumUserBundle/Resources/public/js/*' %}
+        {% javascripts '@scriptoriumPageBundle/Resources/public/js/*' %}
                 <script type="text/javascript" src="{{ asset_url }}"></script>
             {% endjavascripts %}
         {% endblock javascript %}
