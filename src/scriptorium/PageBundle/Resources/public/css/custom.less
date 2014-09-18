@@ -303,18 +303,38 @@ ul.navbar-nav {
 * FORM ***********************************************************************
 *****************************************************************************/
 
-.form-group ul
-{
+.form-msg-error {
     .shadowInset;
     .roundedCorner;
-    border-left: 5px solid #f04e4e;
+    border:1px solid @boxBorder;
     display: block;
-    left: 100%;
-    list-style: none;
     padding: 6px 12px;
     color: #990000;
-    margin: 0 16px;
     clear: both;
-    margin-bottom: 4px;    
+    margin-bottom: 16px;    
+    position: relative;
+    margin-right: -5px;
+    margin-left: 1px;
+    &::after {
+        border-left: 5px solid #f04e4e;
+        top: 0;
+        left:-6px;
+        height: 100%;
+        .roundedCorner;
+        position: absolute;
+        content: " ";
+    }
+}
+
+.form-group ul {
+    .shadowInset;
+    .roundedCorner;
+    display: block;
+    list-style: none;
+    padding: 6px 12px;
+    color: #fff;
+    margin: 0 16px 8px 16px;
+    clear: both;
+    background-color: #aa0000;
 }
 

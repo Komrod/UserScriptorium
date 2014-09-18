@@ -5,7 +5,7 @@
 <h1>{{ 'login.form.title'|trans }}</h1>
 
 {% if error %}
-    <div>{{ error|trans({}, 'FOSUserBundle') }}</div>
+    <div class="form-msg-error">{{ error|trans({}, 'FOSUserBundle') }}</div>
 {% endif %}
 
 <div class="row">

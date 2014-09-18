@@ -2,18 +2,14 @@
             {# find path with no trailing "/" #}
             {% set path = '/' ~ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params'))|trim('/') %}
             
-            <h2>{{ 'also.title'|trans }}</h2>
+            <strong>{{ 'also.title'|trans }}</strong><br/>
             {% if path != '/register' %}
             {{ 'also.no_account'|trans }}
-            
-            <br/><br/>
-            <button type="button" class="btn btn-primary" style="margin-bottom: 10px;" onclick="document.location = '/register';">{{ 'also.links.register'|trans }}</button>
-            <br/><br/>
+            <li><a href="/register">{{ 'also.links.register'|trans }}</a></li>
+            <br/>
             {% endif %}
             {{ 'also.already_account'|trans }}
-            
-            <br/><br/>
-            {% if path != '/login' %}<button type="button" class="btn btn-primary" style="margin-bottom: 10px;" onclick="document.location = '/login';">{{ 'also.links.log_in'|trans }}</button>{% endif %}
-            {% if path != '/forgot' %}<button type="button" class="btn btn-primary" style="margin-bottom: 10px;" onclick="document.location = '/forgot';">{{ 'also.links.forgot_password'|trans }}</button>{% endif %}
-            {% if path != '/confirm' %}<button type="button" class="btn btn-primary" style="margin-bottom: 10px;" onclick="document.location = '/confirm';">{{ 'also.links.resend_confirmation'|trans }}</button>{% endif %}
+            {% if path != '/login' %}<li><a href="/login">{{ 'also.links.log_in'|trans }}</a></li>{% endif %}
+            {% if path != '/forgot' %}<li><a href="/forgot">{{ 'also.links.forgot_password'|trans }}</a></li>{% endif %}
+            {% if path != '/confirm' %}<li><a href="/confirm">{{ 'also.links.resend_confirmation'|trans }}</a></li>{% endif %}
         </div>
