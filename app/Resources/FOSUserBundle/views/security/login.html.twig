@@ -5,7 +5,11 @@
 <h1>{{ 'login.form.title'|trans }}</h1>
 
 {% if error %}
-    <div class="form-msg-error">{{ error|trans({}, 'FOSUserBundle') }}</div>
+    {% if error == "Bad credentials" %}
+        <div class="form-msg-error">{{ "Wrong Email or password"|trans }}</div>
+    {% else %}
+        <div class="form-msg-error">{{ error|trans({}, 'FOSUserBundle') }}</div>
+    {% endif %}
 {% endif %}
 
 <div class="row">
@@ -14,11 +18,10 @@
             {{ 'login.form.prepend'|trans }}
             <form action="{{ path("fos_user_security_check") }}" method="post" class="form-horizontal" role="form" style="margin-top: 30px;">
                 <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
-            
                 <div class="form-group">
-                    <label for="username" class="col-sm-4 control-label">{{ 'security.login.username'|trans({}, 'FOSUserBundle') }}</label>
+                    <label for="username" class="col-sm-4 control-label">{{ 'login.form.email'|trans }}</label>
                     <div class="col-sm-8">
-                        <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" class="form-control" />
+                        <input type="text" id="email" name="_email" value="{{ last_username }}" required="required" class="form-control" />
                     </div>
                 </div>
                 <div class="form-group">
@@ -28,7 +31,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <div class="col-sm-12">
+                    <div class="col-sm-12 text-center">
                         <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
                         <label for="remember_me" class="pointer">{{ 'security.login.remember_me'|trans({}, 'FOSUserBundle') }}</label>
                     </div>
