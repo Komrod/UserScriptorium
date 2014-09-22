@@ -5,10 +5,14 @@
             <strong>{{ 'also.title'|trans }}</strong> 
             {% if path != '/register' %}
             {{ 'also.no_account'|trans }}
+            <ul>
             <li><a href="/register">{{ 'also.links.register'|trans }}</a></li>
+            </ul>
             <br/>
             {% endif %}
             {{ 'also.already_account'|trans }}
+            <ul>
             {% if path != '/login' %}<li><a href="/login">{{ 'also.links.log_in'|trans }}</a></li>{% endif %}
-            {% if path != '/forgot' %}<li><a href="/forgot">{{ 'also.links.forgot_password'|trans }}</a></li>{% endif %}
+            {% if path != '/password/request' %}<li><a href="/password/request">{{ 'also.links.forgot_password'|trans }}</a></li>{% endif %}
+            </ul>
         </div>
