@@ -26,7 +26,6 @@ $( document ).ready(function() {
 			var url = $(this).attr('href');
 			var urlShort = url + '?format=short';
 			$('#page-full').load(urlShort, function (response, status, xhr) {
-				console.log(xhr);
 				if (status == 'error') {
 					// page has an error
 					$('#page-loading img').hide();
@@ -39,7 +38,7 @@ $( document ).ready(function() {
 					usPageloader('#page-full');
 					$('#page-loading').hide();
 					$('#page-loading .error').hide();
-					var title = $(response).find('div[name="page-infos"]').attr('data-title');
+					var title = $('<div>'+response+'</div>').find('div[data-name="page-infos"]').attr('data-title');
 					var state = { html: response, pageTitle: title}
 					window.history.pushState(state, title, url); 
 				}
