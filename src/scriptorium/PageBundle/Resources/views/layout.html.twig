@@ -1,3 +1,4 @@
+{% if app.request.get('format') != "short" %}
 <!DOCTYPE html>
 <html>
     <head>
@@ -22,6 +23,10 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
+                    <div id="page-loading">
+                        <img src="/bundles/userscriptorium/img/page-loading.gif" />
+                        <div class="error" data-toggle="tooltip" data-placement="bottom"></div>
+                    </div>
                     <a href="/" class="navbar-brand"><span class="user">User</span><span class="scriptorium">Scriptorium</span></a>
                 </div>
                 <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
@@ -42,15 +47,19 @@
                 </nav>
             </div>
         </header>
-        <div class="container">
-            {% block body %}{% endblock %}
+        <div class="container" id="page-full">
+{% endif %}
+        <div data-name="page-infos" data-title="{% block titleshort %}UserScriptorium test{% endblock %}"></div>
+        {% block body %}{% endblock %}
+{% if app.request.get('format') != "short" %}
         </div>
         {% block modal %}{% endblock %}
         {% block javascript %}
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        {% javascripts '@scriptoriumPageBundle/Resources/public/js/*' %}
-                <k script type="text/javascript" src="{{ asset_url }}"></script>
+            {% javascripts '@scriptoriumPageBundle/Resources/public/js/*' %}
+            <script type="text/javascript" src="{{ asset_url }}"></script>
             {% endjavascripts %}
         {% endblock javascript %}
     </body>
 </html>
+{% endif %}

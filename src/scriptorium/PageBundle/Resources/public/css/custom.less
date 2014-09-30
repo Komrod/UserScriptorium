@@ -163,8 +163,36 @@ header {
 }
 
 .navbar-header {
+    position: relative;
+    
     a {
         padding-right: 30px;
+    }
+    div#page-loading {
+        position: absolute;
+        top: 12px;
+        left: -32px;
+        display: none;
+        
+        .error {
+            left: 3px;
+            top: 5px;
+            .roundedCorner;
+            background-color: @red;
+            display: none;
+            width: 15px;
+            height: 16px;
+            position: relative;
+        }
+        
+        .tooltip {
+            white-space: nowrap;
+            text-align: left;
+            .tooltip-inner {
+                margin-left: 40%;
+                width: 140%; 
+            }            
+        }
     }
 }
 
