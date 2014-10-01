@@ -1,14 +1,21 @@
 <h1>{{ 'forgot_password.form.title'|trans }}</h1>
 
+{% if success is defined %}
+    <div class="form-msg-success">{{ success|trans }}</div>
+{%  endif %}
+{% if error is defined %}
+    <div class="form-msg-error">{{ error|trans }}</div>
+{%  endif %}
+{% if invalid_username is defined %}
+    <div class="form-msg-error">{{ 'resetting.request.invalid_username'|trans({'%username%': invalid_username}, 'FOSUserBundle') }}</div>
+{% endif %}
+
 <div class="row">
     <div class="col-md-6 col-sm-12">
         <div class="us-box">
             {{ 'forgot_password.form.prepend'|trans }}
             <form action="{{ path('fos_user_resetting_send_email') }}" method="POST" class="form-horizontal" role="form" style="margin-top: 30px;">
                 <div class="form-group">
-                    {% if invalid_username is defined %}
-                        <p>{{ 'resetting.request.invalid_username'|trans({'%username%': invalid_username}, 'FOSUserBundle') }}</p>
-                    {% endif %}
                     <label for="username" class="col-sm-6  control-label">{{ 'resetting.request.username'|trans({}, 'FOSUserBundle') }}</label>
                     <div class="col-sm-6"><input type="text" id="username" name="username" required="required" class="form-control" />
                     </div>
