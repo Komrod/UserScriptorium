@@ -6,6 +6,9 @@ registration:
         postpend: ""
     btn:
         submit: "Register"
+    confirmed:
+        title: ""
+        text: "Welcome to the comunity! Your account has been created and you are now logged in."
 login:
     form:
         title: "Sign in to your account"
@@ -14,6 +17,8 @@ login:
         postpend: ""
     actions:
         error_auth: "Wrong Email or password"
+    btn:
+        submit: "Submit"
 forgot_password:
     form:
         title: "Forgot your password"        
@@ -28,5 +33,5 @@ also:
     links:
         log_in: "Log in"
         forgot_password: "I Forgot my password"
-        resend_confirmation: "Send confirmation again"
         register: "Register a new account"
+        
