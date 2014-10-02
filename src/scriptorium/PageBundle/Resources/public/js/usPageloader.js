@@ -55,29 +55,7 @@ $( document ).ready(function() {
 					window.history.pushState(state, title, url); 
 				}).complete(function(xhr, status) {
 					window.usPageloaderActive = false;
-					console.log('window.usPageloaderActive = false')
 				});
-			
-			/*
-			$('#page-full').load(urlShort, function (response, status, xhr) {
-				if (status == 'error') {
-					// page has an error
-					$('#page-loading img').hide();
-					$('#page-loading .error')
-						.attr('data-original-title', 'There was an error: ' + xhr.status + " " + xhr.statusText)
-						.show();
-				} else
-				{
-					// page loaded successfully
-					usPageloader('#page-full');
-					$('#page-loading').hide();
-					$('#page-loading .error').hide();
-					var title = $('<div>'+response+'</div>').find('div[data-name="page-infos"]').attr('data-title');
-					var state = { html: response, pageTitle: title}
-					window.history.pushState(state, title, url); 
-				}
-			});
-			*/
 			
 			// page is loading
 			window.usPageloaderActive = true;
