@@ -22,7 +22,7 @@ $( document ).ready(function() {
 	{
 		selector = selector || '';
 		
-		$(selector + ' a').click(function() {
+		$(selector + ' a:not(.reload)').click(function() {
 			
 			// already loading a page
 			if (window.usPageloaderActive) {
