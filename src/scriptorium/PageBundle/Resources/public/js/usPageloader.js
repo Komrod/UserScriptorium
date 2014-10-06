@@ -22,7 +22,7 @@ $( document ).ready(function() {
 	{
 		selector = selector || '';
 		
-		$(selector + ' a:not(.reload)').click(function() {
+		$(selector + ' a:not(.pl-ignore)').click(function() {
 			
 			// already loading a page
 			if (window.usPageloaderActive) {
@@ -34,7 +34,14 @@ $( document ).ready(function() {
 			}
 			
 			var url = $(this).attr('href');
-			var urlShort = url + '?format=short';
+			
+			// adding
+			if (url.indexOf('?') == -1) {
+				var urlShort = url + '?format=short';
+			} else {
+				var urlShort = url + '&format=short';
+			}
+				
 			$.ajax({
 				  url: urlShort,
 				  dataType: "html",
@@ -67,8 +74,9 @@ $( document ).ready(function() {
 		});
 	}
 	
+	// init page loader
 	usPageloader();
 	
-	// init Tooltip
+	// init Tooltip of the header
 	$('#page-loading .error').tooltip();
 });
