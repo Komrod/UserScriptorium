@@ -1,6 +1,22 @@
 {% extends "FOSUserBundle::layout.html.twig" %}
 
 {% block fos_user_content %}
-    <h1>{{ 'registration.confirmed.title'|trans }}</h1>
-    <p>{{ 'registration.confirmed.text'|trans }}</p>
+    
+<h1>{{ 'registration.confirmed.title'|trans }}</h1>
+    
+<div class="row">
+    <div class="col-md-12">
+        <div class="us-box">
+            {{ 'registration.confirmed.text'|trans }}
+            <br/><br/>
+            What you should do next:
+            <ul>
+                <li><a href="/script/add">Share with the community and add a userscript</a></li>
+                <li><a href="/account">Update your account profile with a photo</a></li>
+                <li><a href="/script">Browse the userscript list</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
 {% endblock fos_user_content %}
