@@ -1,0 +1,33 @@
+
+<h1>{{ 'profile.show.profile_of'|trans }} &laquo; {{ user.username }} &raquo;</h1>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="us-box profile">
+            {{ 'profile.show.text'|trans }}
+            <br/><br/>
+            <div class="col-md-4 col-sd-12 profile-image">
+                {% if user.profilePictureFile == null %}
+                <center>
+                    <img src="/bundles/userscriptorium/img/default-user.png" width="200" heiht="200" class="picture" />
+                    <input type="button" class="btn btn-primary" value="{{ 'profile.btn.change_image'|trans }}"/>
+                </center>
+                {% else %}
+                <img src="{{ user.profilePictureFile }}" class="picture" />
+                <center>
+                    <input type="button" class="btn btn-primary" value="{{ 'profile.btn.change_image'|trans }}"/>
+                    <input type="button" class="btn btn-danger" value="{{ 'profile.btn.delete_image'|trans }}"/>
+                </center>
+                {% endif %}
+            </div>
+            <div class="col-md-8 col-sd-12 profile-infos">
+                <ul>
+                    <li>{{ 'profile.show.email'|trans }}: {{ user.email }}</li>
+                    <li>{{ 'profile.show.date_registration'|trans }}: {{ user.registrationDate|date('Y-m-d') }}</li>
+                    <li>{{ 'profile.show.date_login'|trans }}: {{ user.lastLogin|date('Y-m-d') }}</li>
+                </ul>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>

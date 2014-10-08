@@ -34,4 +34,12 @@ also:
         log_in: "Log in"
         forgot_password: "I Forgot my password"
         register: "Register a new account"
-        
+profile:
+    show:
+        profile_of: "Profile of "
+        text: "This is your profile informations. Your name and your profile picture is public. Your Email is private and will not be seen by other members"
+        email: "Email"
+        date_registration: "Registration date"
+        date_login: "Last login"
+    btn:
+        change_image: "Upload a new profile picture"
