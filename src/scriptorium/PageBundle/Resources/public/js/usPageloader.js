@@ -74,6 +74,36 @@ $( document ).ready(function() {
 		});
 	}
 	
+	/**
+	 * Load url in specified selected element
+	 */
+	window.usJQueryloader = function(selector, url, options)
+	{
+		options = options || {};
+		
+		options.dataType = options.dataType || 'html';
+		options.preloadHTML = options.preloadHTML || '<center><img src="/bundles/userscriptorium/img/jquery-preloading.gif" width="24" height="24" /></center>';
+		options.error = options.error || function (xhr, status, error) { };
+		options.success = options.success || function (response, status, xhr) { };
+		options.complete = options.complete || function (xhr, status) { };
+		
+		// page is loading
+		$(selector).html(options.preloadHTML);
+	
+		$.ajax({
+			  url: url,
+			  dataType: options.dataType,
+			}).error(function(xhr, status, error) {
+				return options.error(xhr, status, error);
+			}).success(function(response, status, xhr) {
+				return options.success(response, status, xhr);
+			}).complete(function(xhr, status) {
+				return options.complete(xhr, status);
+			});
+		
+	}
+	
+	
 	// init page loader
 	usPageloader();
 	

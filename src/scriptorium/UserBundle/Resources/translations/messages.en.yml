@@ -41,5 +41,9 @@ profile:
         email: "Email"
         date_registration: "Registration date"
         date_login: "Last login"
+    change_image:
+        title: "Update your profile picture"
     btn:
         change_image: "Upload a new profile picture"
+        delete: "Delete"
+        upload: "Upload"
