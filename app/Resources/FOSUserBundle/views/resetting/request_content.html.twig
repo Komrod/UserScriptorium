@@ -1,0 +1,33 @@
+<h1>{{ 'forgot_password.form.title'|trans }}</h1>
+
+{% if success is defined %}
+    <div class="form-msg-success">{{ success|trans }}</div>
+{%  endif %}
+{% if error is defined %}
+    <div class="form-msg-error">{{ error|trans }}</div>
+{%  endif %}
+{% if invalid_username is defined %}
+    <div class="form-msg-error">{{ 'resetting.request.invalid_username'|trans({'%username%': invalid_username}, 'FOSUserBundle') }}</div>
+{% endif %}
+
+<div class="row">
+    <div class="col-md-6 col-sm-12">
+        <div class="us-box">
+            {{ 'forgot_password.form.prepend'|trans }}
+            <form action="{{ path('fos_user_resetting_send_email') }}" method="POST" class="form-horizontal" role="form" style="margin-top: 30px;">
+                <div class="form-group">
+                    <label for="username" class="col-sm-6  control-label">{{ 'resetting.request.username'|trans({}, 'FOSUserBundle') }}</label>
+                    <div class="col-sm-6"><input type="text" id="username" name="username" required="required" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group text-center">
+                    <input type="submit" value="{{ 'forgot_password.btn.submit'|trans }}" class="btn btn-primary" />
+                </div>
+            </form>
+            {{ 'forgot_password.form.postpend'|trans }}
+        </div>
+    </div>
+    <div class="col-md-6 col-sm-12">
+        {% include "scriptoriumUserBundle:block:also.html.twig" %}
+    </div>
+</div>

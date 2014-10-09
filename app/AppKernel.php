@@ -18,8 +18,9 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             
             // scriptorium bundles
+            new scriptorium\PageBundle\scriptoriumPageBundle(),
             new scriptorium\UserBundle\scriptoriumUserBundle(),
-            
+                
             // additional bundles
             new FOS\UserBundle\FOSUserBundle(),
         );

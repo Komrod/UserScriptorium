@@ -6,9 +6,26 @@ registration:
         postpend: ""
     btn:
         submit: "Register"
+    confirmed:
+        title: "Welcome to the comunity!"
+        text: "Your account has been created and you are now logged in."
 login:
     form:
         title: "Sign in to your account"
+        email: "Email:"
+        prepend: ""
+        postpend: ""
+    actions:
+        error_auth: "Wrong Email or password"
+    btn:
+        submit: "Submit"
+forgot_password:
+    form:
+        title: "Forgot your password"        
+        prepend: ""
+        postpend: ""
+    btn:
+        submit: "Reset my password"
 also:
     title: "And also ..."
     already_account: "If you already have an account:"
@@ -16,5 +33,17 @@ also:
     links:
         log_in: "Log in"
         forgot_password: "I Forgot my password"
-        resend_confirmation: "Send confirmation again"
         register: "Register a new account"
+profile:
+    show:
+        profile_of: "Profile of "
+        text: "This is your profile informations. Your name and your profile picture is public. Your Email is private and will not be seen by other members"
+        email: "Email"
+        date_registration: "Registration date"
+        date_login: "Last login"
+    change_image:
+        title: "Update your profile picture"
+    btn:
+        change_image: "Upload a new profile picture"
+        delete: "Delete"
+        upload: "Upload"

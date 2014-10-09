@@ -1,0 +1,4 @@
+parameters:
+#    scriptorium_user_script.example.class: scriptorium\UserBundle\Example
+
+services:

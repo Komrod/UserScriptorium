@@ -6,6 +6,8 @@
 @blue: #598ADE;
 @pink: #D12A74;
 @raspberry: #561635;
+@red: #ee2222;
+@green: #22cc22;
 
 @background: #fff;
 @menuUser: @pink;
@@ -162,8 +164,36 @@ header {
 }
 
 .navbar-header {
+    position: relative;
+    
     a {
         padding-right: 30px;
+    }
+    div#page-loading {
+        position: absolute;
+        top: 12px;
+        left: -32px;
+        display: none;
+        
+        .error {
+            left: 3px;
+            top: 5px;
+            .roundedCorner;
+            background-color: @red;
+            display: none;
+            width: 15px;
+            height: 16px;
+            position: relative;
+        }
+        
+        .tooltip {
+            white-space: nowrap;
+            text-align: left;
+            .tooltip-inner {
+                margin-left: 40%;
+                width: 140%; 
+            }            
+        }
     }
 }
 
@@ -288,7 +318,27 @@ ul.navbar-nav {
             text-transform: capitalize;
         }
     }
+    
+    .clear {
+        clear: both;
+    }
 }
+
+
+/*****************************************************************************
+* PROFILE PAGE ***************************************************************
+*****************************************************************************/
+
+.profile {
+    padding-bottom: 20px !important;
+    
+    .profile-image {
+        .picture {
+            margin-bottom: 20px;
+        }
+    }
+}
+
 
 /*****************************************************************************
 * MODAL **********************************************************************
@@ -303,18 +353,40 @@ ul.navbar-nav {
 * FORM ***********************************************************************
 *****************************************************************************/
 
-.form-group ul
-{
+.form-msg-error {
     .shadowInset;
     .roundedCorner;
-    border-left: 5px solid #f04e4e;
+    border: 3px solid @red;
     display: block;
-    left: 100%;
-    list-style: none;
     padding: 6px 12px;
     color: #990000;
-    margin: 0 16px;
     clear: both;
-    margin-bottom: 4px;    
+    margin-bottom: 16px;    
+    position: relative;
+    margin-right: -5px;
+    margin-left: -5px;
+}
+.form-msg-success {
+    .shadowInset;
+    .roundedCorner;
+    border: 3px solid @green;
+    display: block;
+    padding: 6px 12px;
+    color: #007700;
+    clear: both;
+    margin-bottom: 16px;
+    position: relative;
+    margin-right: -5px;
+    margin-left: -5px;
+}
+
+.form-group ul {
+    display: block;
+    list-style: none;
+    padding: 6px 12px;
+    color: #fff;
+    margin: 0 5px 8px 5px;
+    clear: both;
+    background-color: #aa0000;
 }
 

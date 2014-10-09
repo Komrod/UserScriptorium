@@ -1,4 +1,4 @@
-{# src/scriptorium/UserBundle/Resources/views/layout.html.twig #}
+{% if app.request.get('format') != "short" %}
 <!DOCTYPE html>
 <html>
     <head>
@@ -6,8 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{% block title %}UserScriptorium{% endblock %}</title>
         <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-        {% stylesheets '@scriptoriumUserBundle/Resources/public/css/bootstrap.min.css'
-                       '@scriptoriumUserBundle/Resources/public/css/*.less' %}
+        {% stylesheets '@scriptoriumPageBundle/Resources/public/css/bootstrap.min.css'
+                       '@scriptoriumPageBundle/Resources/public/css/*.less' %}
             <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
         {% endstylesheets %}
         <link href='http://fonts.googleapis.com/css?family=Roboto:900' rel='stylesheet' type='text/css'>
@@ -23,6 +23,10 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
+                    <div id="page-loading">
+                        <img src="/bundles/userscriptorium/img/page-loading.gif" />
+                        <div class="error" data-toggle="tooltip" data-placement="bottom"></div>
+                    </div>
                     <a href="/" class="navbar-brand"><span class="user">User</span><span class="scriptorium">Scriptorium</span></a>
                 </div>
                 <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
@@ -33,25 +37,28 @@
                         <li><a href="/login">Login</a></li>
                         <li><a href="/register">Register</a></li>
                         {% else %}
-                        <li><a href="/account">Account</a></li>
-                        <li><a href="/disconnect">Disconnect</a></li>
+                        <li><a href="/user/">Account</a></li>
+                        <li><a href="/logout" class="pl-ignore">Disconnect</a></li>
                         {% endif %}
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="/add">Add script</a></li>
+                        <li><a href="/script/add">Add script</a></li>
                     </ul>
                 </nav>
             </div>
         </header>
-        <div class="container">
-            {% block body %}{% endblock %}
+        <div class="container" id="page-full">
+{% endif %}
+        <div data-name="page-infos" data-title="{% block titleshort %}UserScriptorium{% endblock %}"></div>
+        {% block body %}{% endblock %}
+{% if app.request.get('format') != "short" %}
         </div>
-        {% block modal %}{% endblock %}
         {% block javascript %}
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        {% javascripts '@scriptoriumUserBundle/Resources/public/js/*' %}
-                <script type="text/javascript" src="{{ asset_url }}"></script>
+            {% javascripts '@scriptoriumPageBundle/Resources/public/js/*' %}
+            <script type="text/javascript" src="{{ asset_url }}"></script>
             {% endjavascripts %}
         {% endblock javascript %}
     </body>
 </html>
+{% endif %}
