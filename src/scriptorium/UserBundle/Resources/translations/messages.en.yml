@@ -44,6 +44,7 @@ profile:
     change_image:
         title: "Update your profile picture"
     btn:
-        change_image: "Upload a new profile picture"
+        change_image: "Change your profile picture"
         delete: "Delete"
         upload: "Upload"
+        close: "Close"

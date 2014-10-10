@@ -12,13 +12,8 @@
                 {% else %}
                     <img src="{{ user.profilePictureFile }}" class="picture" />
                 {% endif %}
-                    <button type="button" class="btn btn-primary" value="{{ 'profile.btn.change_image'|trans }}" data-toggle="modal" data-target="#modalPictureChange" onclick="" />
+                    <button type="button" class="btn btn-primary" value="{{ 'profile.btn.change_image'|trans }}" data-toggle="modal" data-target="#modalPictureChange" onclick="usJQueryloader('#modalPictureChangeBody', '/user/picture?format=short');" />
                 </center>
-                <center>
-                    <input type="button" class="btn btn-primary" value="{{ 'profile.btn.change_image'|trans }}"/>
-                    <input type="button" class="btn btn-danger" value="{{ 'profile.btn.delete_image'|trans }}"/>
-                </center>
-                {% endif %}
             </div>
             <div class="col-md-8 col-sd-12 profile-infos">
                 <ul>
@@ -32,19 +27,18 @@
     </div>
 </div>
 
-<div id="modalPictureChange" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+<div id="modalPictureChange" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="modaPictureLabel" aria-hidden="true" style="display: none;">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="myModalLabel">Modal Heading</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">{{ 'profile.btn.close'|trans }}</span></button>
+                <h4 class="modal-title" id="modaPictureLabel">{{ 'profile.btn.change_image'|trans }}</h4>
             </div>
             <div class="modal-body" id="modalPictureChangeBody">
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">{{ 'profile.btn.close'|trans }}</button>
             </div>
         </div>
     </div>
 </div>
-  

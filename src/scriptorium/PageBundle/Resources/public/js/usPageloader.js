@@ -16,7 +16,7 @@ $( document ).ready(function() {
 	};
 	
 	/**
-	 * Load page HTML in center container
+	 * Apply page load on click event of links, load the HTML in center container
 	 */
 	window.usPageloader = function(selector)
 	{
@@ -83,28 +83,30 @@ $( document ).ready(function() {
 		
 		options.dataType = options.dataType || 'html';
 		options.preloadHTML = options.preloadHTML || '<center><img src="/bundles/userscriptorium/img/jquery-preloading.gif" width="24" height="24" /></center>';
+		options.errorHTML = options.errorHTML || '';
 		options.error = options.error || function (xhr, status, error) { };
 		options.success = options.success || function (response, status, xhr) { };
 		options.complete = options.complete || function (xhr, status) { };
 		
 		// page is loading
 		$(selector).html(options.preloadHTML);
-	
+		
 		$.ajax({
 			  url: url,
 			  dataType: options.dataType,
 			}).error(function(xhr, status, error) {
+				$(selector).html(options.errorHTML);
 				return options.error(xhr, status, error);
 			}).success(function(response, status, xhr) {
+				$(selector).html(response);
 				return options.success(response, status, xhr);
 			}).complete(function(xhr, status) {
 				return options.complete(xhr, status);
 			});
-		
 	}
 	
 	
-	// init page loader
+	// init page loader links
 	usPageloader();
 	
 	// init Tooltip of the header
