@@ -1,0 +1,25 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% form_theme form _self %}
+
+{% block form_row %}
+<div class="form-group">
+    {{ form_errors(form, {'attr': {'class': 'col-sm-12'} }) }}
+    <div class="col-sm-12">
+        {{ form_widget(form) }}
+    </div>
+</div>
+{% endblock %}
+
+{% block submit_widget %}
+<div style="margin-top: 20px;">
+    <center>
+        <button type="submit" id="form_profile.btn.upload" name="form[profile.btn.upload]" class="btn btn-primary">{{ 'profile.btn.upload'|trans }}</button>
+    </center>
+</div>
+{% endblock submit_widget %}
+
+
+{% block fos_user_content %}
+    {{ form(form) }}
+{% endblock %}

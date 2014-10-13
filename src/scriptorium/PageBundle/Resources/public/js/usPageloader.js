@@ -83,7 +83,7 @@ $( document ).ready(function() {
 		
 		options.dataType = options.dataType || 'html';
 		options.preloadHTML = options.preloadHTML || '<center><img src="/bundles/userscriptorium/img/jquery-preloading.gif" width="24" height="24" /></center>';
-		options.errorHTML = options.errorHTML || '';
+		options.errorHTML = options.errorHTML || '<center><div class="jquery-error"><div class="icomoon icon-close"></div><div class="text">An error occured</div><div class="error">%error%</div></div></center>';
 		options.error = options.error || function (xhr, status, error) { };
 		options.success = options.success || function (response, status, xhr) { };
 		options.complete = options.complete || function (xhr, status) { };
@@ -92,15 +92,16 @@ $( document ).ready(function() {
 		$(selector).html(options.preloadHTML);
 		
 		$.ajax({
-			  url: url,
-			  dataType: options.dataType,
+			    url: url,
+			    dataType: options.dataType,
 			}).error(function(xhr, status, error) {
-				$(selector).html(options.errorHTML);
+				$(selector).html(options.errorHTML.replace('%error%', xhr.status + " " + xhr.statusText));
 				return options.error(xhr, status, error);
 			}).success(function(response, status, xhr) {
 				$(selector).html(response);
 				return options.success(response, status, xhr);
 			}).complete(function(xhr, status) {
+				usPageloader(selector);
 				return options.complete(xhr, status);
 			});
 	}

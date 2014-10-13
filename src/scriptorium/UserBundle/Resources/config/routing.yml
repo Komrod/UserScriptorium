@@ -1,2 +1,6 @@
 
-    
+contact:
+    path:  /user/picture
+    defaults: { _controller: scriptoriumUserBundle:User:picture }
+    requirements:
+        _method:  GET

@@ -33,12 +33,12 @@
 @font-face {
     font-family: 'icomoon';
     color: lighten(@pink, 80%);
-    src:url('../fonts/icomoon.eot?-ur7635');
-    src:url('../fonts/icomoon.eot?#iefix-ur7635') format('embedded-opentype'),url('../fonts/icomoon.woff?-ur7635') format('woff'),url('../fonts/icomoon.ttf?-ur7635') format('truetype'),url('../fonts/icomoon.svg?-ur7635#icomoon') format('svg');
+    src:url('/fonts/icomoon.eot?-ur7635');
+    src:url('/fonts/icomoon.eot?#iefix-ur7635') format('embedded-opentype'),url('/fonts/icomoon.woff?-ur7635') format('woff'),url('/fonts/icomoon.ttf?-ur7635') format('truetype'),url('/fonts/icomoon.svg?-ur7635#icomoon') format('svg');
     font-weight: normal;
     font-style: normal;
 }
-.navbar-nav [class^="icon-"], .navbar-nav [class*=" icon-"] {
+.navbar-nav [class^="icon-"], .navbar-nav [class*=" icon-"],.icomoon[class^="icon-"], .icomoon[class*=" icon-"] {
     font-family: 'icomoon';
     speak: none;
     font-style: normal;
@@ -49,6 +49,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+
 .icon-home:before {
     content: "\e600";
 }
@@ -135,7 +136,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
     @font-face {
         font-family: 'icomoon';
-        src: url('../fonts/icomoon.svg#icomoon') format('svg');
+        src: url('/fonts/icomoon.svg#icomoon') format('svg');
     };
 }
 
@@ -349,6 +350,25 @@ ul.navbar-nav {
     z-index: 2000;
 }
 
+/*****************************************************************************
+* JQUERY *********************************************************************
+*****************************************************************************/
+
+.jquery-error {
+    color: #bb2222;
+    font-size: 42px;
+    display: inline;
+    .icon-close {
+    }
+    .text {
+        display: inline;
+        margin-bottom: 16px;
+    }
+    .error {
+        color: #999;
+        font-size: 14px;
+    }
+}
 
 /*****************************************************************************
 * FORM ***********************************************************************

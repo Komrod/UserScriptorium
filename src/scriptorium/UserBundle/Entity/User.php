@@ -33,7 +33,7 @@ class User extends BaseUser
     protected $editionDate;
     
     /**
-     * @Assert\File(maxSize="2048k")
+     * @Assert\File(maxSize="1024k")
      * @Assert\Image(mimeTypesMessage="Please upload a valid image.")
      */
     protected $profilePictureFile;
