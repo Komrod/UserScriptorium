@@ -12,7 +12,7 @@
                 {% else %}
                     <img src="{{ user.profilePictureFile }}" class="picture" />
                 {% endif %}
-                    <button type="button" class="btn btn-primary" value="{{ 'profile.btn.change_image'|trans }}" data-toggle="modal" data-target="#modalPictureChange" onclick="usJQueryloader('#modalPictureChangeBody', '/user/picture?format=short');" />
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalPictureChange" onclick="usJQueryloader('#modalPictureChangeBody', '/user/picture?format=short');" style="clear: both;">{{ 'profile.btn.picture'|trans }}</button>
                 </center>
             </div>
             <div class="col-md-8 col-sd-12 profile-infos">

@@ -1,5 +1,5 @@
 /*
- * UserScriptorium Pageloader
+ * UserScriptorium Pageloader and JQuery loader
  * Copyright 2014 Thierry DE LAPEYRE
  */
 
