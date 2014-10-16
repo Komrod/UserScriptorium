@@ -82,7 +82,7 @@ $( document ).ready(function() {
 		options = options || {};
 		
 		options.dataType = options.dataType || 'html';
-		options.preloadHTML = options.preloadHTML || '<center><img src="/bundles/userscriptorium/img/jquery-preloading.gif" width="24" height="24" /></center>';
+		options.preloadHTML = options.preloadHTML || '<center><img src="/img/jquery-preloading.gif" width="24" height="24" /></center>';
 		options.errorHTML = options.errorHTML || '<center><div class="jquery-error"><div class="icomoon icon-close"></div><div class="text">An error occured</div><div class="error">%error%</div></div></center>';
 		options.error = options.error || function (xhr, status, error) { };
 		options.success = options.success || function (response, status, xhr) { };

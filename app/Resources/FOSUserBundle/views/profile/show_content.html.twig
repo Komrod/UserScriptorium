@@ -8,7 +8,7 @@
             <div class="col-md-4 col-sd-12 profile-image">
                 <center>
                 {% if user.profilePictureFile == null %}
-                    <img src="/bundles/userscriptorium/img/default-user.png" width="200" heiht="200" class="picture" />
+                    <img src="/img/default-user.png" width="200" heiht="200" class="picture" />
                 {% else %}
                     <img src="{{ user.profilePictureFile }}" class="picture" />
                 {% endif %}
