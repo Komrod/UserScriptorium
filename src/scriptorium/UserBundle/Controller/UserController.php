@@ -28,7 +28,13 @@ class UserController extends Controller
         } 
         
         $form = $this->createFormBuilder($user)
-            ->add('profilePictureFile')
+            ->add('profilePictureFile', 'file', array(
+                    'required' => true,
+                    'attr' => array(
+                            'class' => 'form-file-input',
+                    )
+            )
+        )
             ->add('profile.btn.upload', 'submit')
             ->getForm();
         
